@@ -49,6 +49,10 @@ stores:
       source: https://github.com/Calcium-Ion/AstrLink
       source_author: Calcium-Ion
       support_pc: true
+      screenshot_pc_files:
+        - .github/screenshots/pc-1-overview.jpg
+        - .github/screenshots/pc-2-providers.jpg
+        - .github/screenshots/pc-3-privacy.jpg
   private:
     enabled: true
     skip_if_version_exists: true

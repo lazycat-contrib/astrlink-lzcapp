@@ -14,7 +14,8 @@ services:
     # upstream: docker.io/calciumion/astrlink:0.2.0
     # 官方商店交付（delivery.mode=lazycat）时由 Action 转存到懒猫镜像源并改写此行
     image: docker.io/calciumion/astrlink:0.2.0
-    # entrypoint 以 root 启动、把 /data 移交给内置 astrlink 用户（uid 10001）后降权运行，勿设 user
+    # 显式以 root 启动：entrypoint 先把 /data 移交给内置 astrlink 用户（uid 10001）再降权运行
+    user: root
 {{if .U.reset_console_password}}
     environment:
       # 见 lzc-deploy-params.yml：打开开关重新配置实例，重启后控制台密码被清除
