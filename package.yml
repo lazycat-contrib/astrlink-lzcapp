@@ -8,10 +8,10 @@ author: Calcium-Ion
 license: AGPL-3.0
 locales:
   zh:
-    name: "AstrLink 星澜"
+    name: "AstrLink"
     description: "本地 AI 网关：把订阅与 API 提供商接入一处，为 Codex、Claude Code 等 Agent 提供统一的 OpenAI / Anthropic / Gemini 兼容接口，路由、调用记录与隐私检测都在本机完成"
   zh_CN:
-    name: "AstrLink 星澜"
+    name: "AstrLink"
     description: "本地 AI 网关：把订阅与 API 提供商接入一处，为 Codex、Claude Code 等 Agent 提供统一的 OpenAI / Anthropic / Gemini 兼容接口，路由、调用记录与隐私检测都在本机完成"
   en:
     name: "AstrLink"

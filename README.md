@@ -1,6 +1,6 @@
 # astrlink-lzcapp
 
-[AstrLink](https://github.com/Calcium-Ion/AstrLink)（星澜）的懒猫微服打包。
+[AstrLink](https://github.com/Calcium-Ion/AstrLink) 的懒猫微服打包。
 
 本机（微服）运行的 AI 网关：把 Codex、Claude 等订阅与各家 API 提供商接入一处，
 为 Codex / Claude Code / OpenCode 等 Agent 提供统一的 OpenAI / Anthropic / Gemini

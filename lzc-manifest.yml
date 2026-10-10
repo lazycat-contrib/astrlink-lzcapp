@@ -7,7 +7,7 @@ application:
       backend: http://astrlink:8317/
   entries:
     - id: console
-      title: "AstrLink 控制台"
+      title: "AstrLink"
       path: /
 services:
   astrlink:
@@ -33,7 +33,7 @@ services:
     binds:
       - /lzcapp/var/data:/data
 usage: |
-  AstrLink（星澜）在本机（微服）运行一个 AI 网关：把 Codex、Claude 等订阅与各家 API
+  AstrLink 在本机（微服）运行一个 AI 网关：把 Codex、Claude 等订阅与各家 API
   接入一处，为 Codex / Claude Code / OpenCode 等 Agent 提供统一的
   OpenAI / Anthropic / Gemini 兼容接口，调用记录、用量统计与隐私检测均在本机完成。
 
