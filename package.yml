@@ -5,7 +5,7 @@ description: "AstrLink: a local AI gateway that unifies subscriptions and API pr
 min_os_version: "1.5.0"
 homepage: https://github.com/Calcium-Ion/AstrLink
 author: Calcium-Ion
-license: AGPL-3.0
+license: Apache-2.0
 locales:
   zh:
     name: "AstrLink"
