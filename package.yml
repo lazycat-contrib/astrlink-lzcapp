@@ -1,0 +1,18 @@
+package: cloud.lazycat.app.astrlink
+version: 0.2.0
+name: AstrLink
+description: "AstrLink: a local AI gateway that unifies subscriptions and API providers for AI agents, with smart routing and on-device privacy"
+min_os_version: "1.5.0"
+homepage: https://github.com/Calcium-Ion/AstrLink
+author: Calcium-Ion
+license: AGPL-3.0
+locales:
+  zh:
+    name: "AstrLink 星澜"
+    description: "本地 AI 网关：把订阅与 API 提供商接入一处，为 Codex、Claude Code 等 Agent 提供统一的 OpenAI / Anthropic / Gemini 兼容接口，路由、调用记录与隐私检测都在本机完成"
+  zh_CN:
+    name: "AstrLink 星澜"
+    description: "本地 AI 网关：把订阅与 API 提供商接入一处，为 Codex、Claude Code 等 Agent 提供统一的 OpenAI / Anthropic / Gemini 兼容接口，路由、调用记录与隐私检测都在本机完成"
+  en:
+    name: "AstrLink"
+    description: "A local AI gateway that unifies subscriptions and API providers for AI agents, with smart routing and on-device privacy"

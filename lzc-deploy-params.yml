@@ -1,0 +1,17 @@
+params:
+  # 忘记控制台密码时的救援开关：打开并重新配置实例 → 重启后密码清空，可重新设置；随后建议关闭
+  - id: reset_console_password
+    type: bool
+    name: "Reset Console Password"
+    description: "忘记控制台密码时打开本开关并重新配置实例：应用重启后密码被清除，可重新设置（设置完请关闭）"
+    default_value: false
+
+locales:
+  zh:
+    reset_console_password:
+      name: "重置控制台密码"
+      description: "忘记控制台密码时打开本开关并重新配置实例：应用重启后密码被清除，可重新设置（设置完请关闭）"
+  zh_CN:
+    reset_console_password:
+      name: "重置控制台密码"
+      description: "忘记控制台密码时打开本开关并重新配置实例：应用重启后密码被清除，可重新设置（设置完请关闭）"

@@ -1,0 +1,56 @@
+version: 1
+
+project:
+  root: .
+  build_config: lzc-build.yml
+  package_file: package.yml
+  output: dist/astrlink.lpk
+  target_arch: amd64
+
+update:
+  strategy: publish
+  allow_downgrade: false
+  version_source:
+    type: image
+    image: astrlink
+
+build:
+  toolchains: []
+  run_buildscript: false
+
+images:
+  - id: astrlink
+    target: service
+    service: astrlink
+    source: docker.io/calciumion/astrlink
+    channel: stable
+    # 上游只发 x.y.z 形式的版本 tag（另有 latest / x.y 浮动 tag，不参与匹配）
+    tag_regex: '^[0-9]+\.[0-9]+\.[0-9]+$'
+    delivery:
+      # 官方商店要求镜像来自懒猫镜像源：由 Action 用 LZC_API_TOKEN 转存并改写 manifest
+      mode: lazycat
+
+stores:
+  official:
+    enabled: true
+    skip_if_version_exists: true
+    create_if_missing: true
+    changelog_locales: [zh, en]
+    application:
+      language: zh
+      name: AstrLink 星澜
+      brief: 本地 AI 网关：把订阅与 API 提供商接入一处，给 Codex、Claude Code 等 Agent 一个统一的模型接口
+      description: |
+        AstrLink（星澜）在本机运行一个 AI 网关：把 Codex、Claude 等订阅与各家按量付费 API
+        接入一处，为 Codex / Claude Code / OpenCode 等 Agent 提供统一的 OpenAI、Anthropic、
+        Gemini 兼容接口，支持模型路由、失败重试与提供商切换。调用记录、用量统计与隐私检测
+        （提醒 / 拦截 / 脱敏）均在本机完成，密钥与登录态保存在你自己的微服里。
+      keywords: AI 网关,模型网关,Codex,Claude Code,OpenCode,OpenAI,Anthropic,Gemini,隐私
+      source: https://github.com/Calcium-Ion/AstrLink
+      source_author: Calcium-Ion
+      support_pc: true
+  private:
+    enabled: true
+    skip_if_version_exists: true
+    name: AstrLink 星澜
+    summary: "本地 AI 网关：统一订阅与 API 提供商，为 Agent 提供 OpenAI / Anthropic / Gemini 兼容接口（懒猫微服打包）"

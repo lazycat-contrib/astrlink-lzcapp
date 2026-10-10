@@ -1,0 +1,48 @@
+application:
+  subdomain: astrlink
+  public_path:
+    - /
+  upstreams:
+    - location: /
+      backend: http://astrlink:8317/
+  entries:
+    - id: console
+      title: "AstrLink 控制台"
+      path: /
+services:
+  astrlink:
+    # upstream: docker.io/calciumion/astrlink:0.2.0
+    # 官方商店交付（delivery.mode=lazycat）时由 Action 转存到懒猫镜像源并改写此行
+    image: docker.io/calciumion/astrlink:0.2.0
+    # entrypoint 以 root 启动、把 /data 移交给内置 astrlink 用户（uid 10001）后降权运行，勿设 user
+{{if .U.reset_console_password}}
+    environment:
+      # 见 lzc-deploy-params.yml：打开开关重新配置实例，重启后控制台密码被清除
+      - ASTRLINK_RESET_PASSWORD=reset
+{{end}}
+    healthcheck:
+      # 与镜像自带 HEALTHCHECK 一致
+      test:
+        - CMD
+        - astrlink-core
+        - healthcheck
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    binds:
+      - /lzcapp/var/data:/data
+usage: |
+  AstrLink（星澜）在本机（微服）运行一个 AI 网关：把 Codex、Claude 等订阅与各家 API
+  接入一处，为 Codex / Claude Code / OpenCode 等 Agent 提供统一的
+  OpenAI / Anthropic / Gemini 兼容接口，调用记录、用量统计与隐私检测均在本机完成。
+
+  【首次使用】打开应用即进入控制台：按提示设置一个管理密码（启动后 10 分钟内有效；
+  重启应用可重新打开该窗口，之后用密码登录）。
+  【接入模型】在「API 提供商」中添加订阅或 API 密钥并拉取模型；
+  在「访问令牌」中为 Agent 创建令牌。
+  【Agent 接入】Base URL 填本应用域名（OpenAI 兼容以 /v1 结尾，Anthropic / Gemini
+  的写法见控制台概览提示），API Key 填上一步创建的访问令牌。
+  【数据】配置、登录态与用量保存在 /lzcapp/var/data，应用升级不丢失；备份时整目录拷走即可。
+  【忘记密码】在懒猫「应用设置」中打开「重置控制台密码」并重新配置本应用，
+  重启后密码被清除、可重新设置；设置完请记得关闭该开关。

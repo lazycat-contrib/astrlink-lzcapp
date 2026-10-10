@@ -1,0 +1,6 @@
+dist/
+.lazycat-build/
+*.lpk
+.lzc-dtl-cache.json
+.lzc-cli-cache/
+.DS_Store
