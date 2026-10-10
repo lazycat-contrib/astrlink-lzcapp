@@ -53,6 +53,11 @@ stores:
         - .github/screenshots/pc-1-overview.jpg
         - .github/screenshots/pc-2-providers.jpg
         - .github/screenshots/pc-3-privacy.jpg
+      support_mobile: true
+      screenshot_mobile_files:
+        - .github/screenshots/mobile-1-overview.jpg
+        - .github/screenshots/mobile-2-providers.jpg
+        - .github/screenshots/mobile-3-signin.jpg
   private:
     enabled: true
     skip_if_version_exists: true
