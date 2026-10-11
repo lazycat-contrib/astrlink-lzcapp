@@ -1,5 +1,5 @@
 package: cloud.lazycat.app.astrlink
-version: 0.2.0
+version: 0.2.2
 name: AstrLink
 description: "AstrLink: a local AI gateway that unifies subscriptions and API providers for AI agents, with smart routing and on-device privacy"
 min_os_version: "1.5.0"
