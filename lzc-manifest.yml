@@ -11,9 +11,9 @@ application:
       path: /
 services:
   astrlink:
-    # upstream: docker.io/calciumion/astrlink:0.2.13
+    # upstream: docker.io/calciumion/astrlink:0.2.14
     # 官方商店交付（delivery.mode=lazycat）时由 Action 转存到懒猫镜像源并改写此行
-    image: registry.lazycat.cloud/czyt/calciumion/astrlink:bedb7c63659630ac
+    image: registry.lazycat.cloud/czyt/calciumion/astrlink:394f1b3025891b4a
     # 显式以 root 启动：entrypoint 先把 /data 移交给内置 astrlink 用户（uid 10001）再降权运行
     user: root
 {{if .U.reset_console_password}}
